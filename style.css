@@ -132,9 +132,19 @@ button { font-family: inherit; }
 .hero-sub {
   font-size: 1.15rem;
   color: var(--text-muted);
-  margin-top: 24px;
+  margin-top: 8px;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+
+.hero-aka {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 14px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  opacity: 0.7;
 }
 
 .scroll-indicator {
@@ -257,6 +267,26 @@ button { font-family: inherit; }
   border-color: var(--text);
   color: var(--text);
   background: rgba(255, 255, 255, 0.04);
+}
+
+.cv-link {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 10px 24px;
+  border: 1px solid var(--border-hover);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  transition: all 0.3s;
+}
+
+.cv-link:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+  transform: translateY(-2px);
 }
 
 /* ── Work ── */
