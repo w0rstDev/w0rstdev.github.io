@@ -1,59 +1,65 @@
-const body = document.body;
-const themeToggle = document.querySelector(".theme-toggle");
-const modal = document.querySelector("#project-modal");
-const modalTitle = document.querySelector("#modal-title");
-const modalText = document.querySelector("#modal-text");
-const closeButton = document.querySelector(".modal-close");
+/* ── Tab Switching ── */
+const tabs = document.querySelectorAll(".tab");
+const panels = document.querySelectorAll(".tab-panel");
 
-const projects = {
-  Gamblemon: "A roguelike slot-machine game built around Pokémon-inspired creatures, combinations and escalating choices. This is a portfolio placeholder — replace this text with your real project description.",
-  Waifuro: "A roguelike deckbuilder focused on collecting characters and creating powerful combinations. Replace this text with your final project description."
-};
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = tab.dataset.tab;
 
-const savedTheme = localStorage.getItem("portfolio-theme");
-if (savedTheme === "dark") {
-  body.classList.add("dark");
-  themeToggle.textContent = "☾";
-}
+    tabs.forEach((t) => t.classList.remove("active"));
+    panels.forEach((p) => p.classList.remove("active"));
 
-themeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  const dark = body.classList.contains("dark");
-  themeToggle.textContent = dark ? "☾" : "☼";
-  localStorage.setItem("portfolio-theme", dark ? "dark" : "light");
-});
-
-document.querySelectorAll(".details-btn").forEach(button => {
-  button.addEventListener("click", () => {
-    const project = button.dataset.project;
-    modalTitle.textContent = project;
-    modalText.textContent = projects[project] || "Project information coming soon.";
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
+    tab.classList.add("active");
+    document.getElementById(`tab-${target}`).classList.add("active");
   });
 });
 
-function closeModal() {
-  modal.classList.remove("open");
-  modal.setAttribute("aria-hidden", "true");
-}
-
-closeButton.addEventListener("click", closeModal);
-modal.addEventListener("click", event => {
-  if (event.target === modal) closeModal();
-});
-
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeModal();
-});
-
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
+/* ── Scroll Reveal ── */
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
     });
   },
-  { threshold: 0.12 }
+  { threshold: 0.1 }
 );
 
-document.querySelectorAll(".section, .game-card").forEach(el => observer.observe(el));
+document
+  .querySelectorAll(".section, .project-card")
+  .forEach((el) => revealObserver.observe(el));
+
+/* ── Active Nav Highlight ── */
+const navLinks = document.querySelectorAll(".nav nav a");
+const allSections = document.querySelectorAll("section[id]");
+
+const navObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${id}`
+          );
+        });
+      }
+    });
+  },
+  { threshold: 0.35, rootMargin: "-80px 0px 0px 0px" }
+);
+
+allSections.forEach((section) => navObserver.observe(section));
+
+/* ── Smooth Scroll for Nav Links ── */
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+});
