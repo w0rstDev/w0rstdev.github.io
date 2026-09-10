@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Game developer portfolio">
+  <title>Game Developer — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="logo" href="#home">ZALI<span>✦</span></a>
+    <nav>
+      <a href="#about">ABOUT</a>
+      <a href="#games">GAMES</a>
+      <a href="#next">NEXT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle theme">☼</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-shape shape-one"></div>
+      <div class="hero-shape shape-two"></div>
+      <div class="hero-content">
+        <p class="eyebrow">GAME DEVELOPER · DESIGNER</p>
+        <h1>I MAKE<br><em>GAMES.</em></h1>
+        <p class="hero-text">Small ideas, strange mechanics, and games worth spending time with.</p>
+        <a class="scroll-link" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
+      </div>
+      <div class="hero-doodle" aria-hidden="true">
+        <div class="doodle-face">
+          <span></span><span></span>
+          <i></i>
+        </div>
+        <div class="doodle-body"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section-label">01 / ABOUT</div>
+      <div class="about-grid">
+        <div>
+          <h2>WHO<br><em>AM I?</em></h2>
+        </div>
+        <div class="about-copy">
+          <p class="big-copy">I'm a game developer and designer who enjoys turning ideas into playable things.</p>
+          <p>I work mainly with Unity, C#, Godot and game design. I care about mechanics, feel, iteration and making systems that are actually fun to use.</p>
+          <div class="skills">
+            <span>UNITY</span><span>C#</span><span>GODOT</span><span>GAME DESIGN</span><span>3D MATH</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="games" class="section games">
+      <div class="section-label">02 / GAMES</div>
+      <div class="section-heading">
+        <h2>THINGS<br><em>I MADE.</em></h2>
+        <p>A few projects from my little corner of game development.</p>
+      </div>
+
+      <div class="game-list">
+        <article class="game-card featured">
+          <div class="game-image placeholder gamblemon">
+            <span>GAMBLEMON</span>
+          </div>
+          <div class="game-info">
+            <p class="game-number">01</p>
+            <h3>Gamblemon</h3>
+            <p>A Pokémon-inspired roguelike slot machine where luck, synergies and strategy collide.</p>
+            <div class="tags"><span>UNITY</span><span>ROGUELIKE</span><span>GAME DESIGN</span></div>
+            <button class="details-btn" data-project="Gamblemon">VIEW PROJECT ↗</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-image placeholder waifuro">
+            <span>WAIFURO</span>
+          </div>
+          <div class="game-info">
+            <p class="game-number">02</p>
+            <h3>Waifuro</h3>
+            <p>A roguelike deckbuilder built around collecting characters and discovering synergies.</p>
+            <div class="tags"><span>GODOT</span><span>DECKBUILDER</span><span>PIXEL ART</span></div>
+            <button class="details-btn" data-project="Waifuro">VIEW PROJECT ↗</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="next" class="section next">
+      <div class="section-label">03 / NEXT</div>
+      <div class="next-inner">
+        <p class="eyebrow">CURRENTLY COOKING</p>
+        <h2>WHAT'S<br><em>NEXT?</em></h2>
+        <p>More games. Better systems. More experiments that probably start as a terrible idea.</p>
+        <div class="orbit" aria-hidden="true"><span>✦</span></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="section-label">04 / CONTACT</div>
+      <div class="contact-inner">
+        <p class="eyebrow">SAY HELLO</p>
+        <h2>LET'S MAKE<br><em>SOMETHING.</em></h2>
+        <div class="contact-links">
+          <a href="https://github.com/" target="_blank" rel="noopener">GITHUB ↗</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+          <a href="mailto:hello@example.com">EMAIL ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 ZALI</span>
+    <span>BUILT WITH HTML · CSS · JS</span>
+  </footer>
+
+  <div class="modal" id="project-modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">×</button>
+      <p class="eyebrow">PROJECT</p>
+      <h2 id="modal-title">GAMBLEMON</h2>
+      <p id="modal-text"></p>
+      <a class="modal-link" href="#contact">GET IN TOUCH →</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
