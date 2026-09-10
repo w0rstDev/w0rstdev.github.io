@@ -295,12 +295,13 @@ button { font-family: inherit; }
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 65px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .profile-photo-wrapper {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .profile-photo {
@@ -521,6 +522,9 @@ button { font-family: inherit; }
 .gamblemon { background: linear-gradient(135deg, #7d62d6, #5a3fb5); }
 .waifuro { background: linear-gradient(135deg, #d36d86, #b84d6a); }
 .bytebane { background: linear-gradient(135deg, #2d5a88, #1a3c5e); }
+.decks-of-echoes { background: linear-gradient(135deg, #a33b4b, #702531); }
+.tech-loop { background: linear-gradient(135deg, #329ea8, #1d6b73); }
+.rikas-adventure { background: linear-gradient(135deg, #e8912e, #a86216); }
 .mobile-soon { background: linear-gradient(135deg, #4a9e7d, #357a5e); }
 .card-design { background: linear-gradient(135deg, #e05e5e, #a83232); }
 .art-2b { background: linear-gradient(135deg, #7a7a7a, #424242); }
