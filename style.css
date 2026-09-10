@@ -520,8 +520,10 @@ button { font-family: inherit; }
 
 .gamblemon { background: linear-gradient(135deg, #7d62d6, #5a3fb5); }
 .waifuro { background: linear-gradient(135deg, #d36d86, #b84d6a); }
+.bytebane { background: linear-gradient(135deg, #2d5a88, #1a3c5e); }
 .mobile-soon { background: linear-gradient(135deg, #4a9e7d, #357a5e); }
-.art-soon { background: linear-gradient(135deg, #c7873a, #a86d2a); }
+.card-design { background: linear-gradient(135deg, #e05e5e, #a83232); }
+.art-2b { background: linear-gradient(135deg, #7a7a7a, #424242); }
 
 .card-info { padding: 26px 28px 30px; }
 

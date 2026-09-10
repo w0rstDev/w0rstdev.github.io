@@ -44,7 +44,7 @@
       <div class="about-content">
         <div class="profile-photo-wrapper">
           <div class="profile-photo">
-            <img src="profile.jpg" alt="Profile Photo" onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+            <img src="bio.jpeg" alt="Profile Photo" onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
             <span class="profile-initials">Z</span>
           </div>
         </div>
@@ -84,10 +84,11 @@
       <div class="tab-panel active" id="tab-pc">
         <div class="project-grid">
 
-          <!-- Image-based card: put your .png in the project folder -->
+          <!-- Video-based card: Gamblemon -->
           <article class="project-card">
             <div class="card-visual gamblemon">
-              <img src="gamblemon.png" alt="Gamblemon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <video src="Gamblemon.mp4" muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
               <span class="card-fallback" style="display:none;">GAMBLEMON</span>
             </div>
             <div class="card-info">
@@ -101,11 +102,10 @@
             </div>
           </article>
 
-          <!-- Video-based card: put your .mp4 in the project folder -->
+          <!-- Image-based card: Waifuro -->
           <article class="project-card">
             <div class="card-visual waifuro">
-              <video src="waifuro.mp4" muted loop playsinline
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <img src="waifuro.png" alt="Waifuro" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
               <span class="card-fallback" style="display:none;">WAIFURO</span>
             </div>
             <div class="card-info">
@@ -115,6 +115,24 @@
                 <span>Unity</span>
                 <span>Deckbuilder</span>
                 <span>Pixel Art</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video-based card: Bytebane -->
+          <article class="project-card">
+            <div class="card-visual bytebane">
+              <video src="bytebane.mp4" muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="card-fallback" style="display:none;">BYTEBANE</span>
+            </div>
+            <div class="card-info">
+              <h3>Bytebane</h3>
+              <p>A fast-paced 2D top-down shooter filled with intense action and digital chaos.</p>
+              <div class="card-tags">
+                <span>Unity</span>
+                <span>Top-Down Shooter</span>
+                <span>Action</span>
               </div>
             </div>
           </article>
@@ -144,19 +162,40 @@
       <!-- Art -->
       <div class="tab-panel" id="tab-art">
         <div class="project-grid">
+
           <article class="project-card">
-            <div class="card-visual art-soon">
-              <span>COMING SOON</span>
+            <div class="card-visual card-design">
+              <video src="card_design.mp4" muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="card-fallback" style="display:none;">CARD DESIGN</span>
             </div>
             <div class="card-info">
-              <h3>Coming Soon</h3>
-              <p>Art pieces and visual work will be showcased here. Patience, young padawan.</p>
+              <h3>Card Design</h3>
+              <p>Animated card concept showcasing visual effects and dynamic layout design.</p>
               <div class="card-tags">
                 <span>Art</span>
-                <span>TBA</span>
+                <span>UI/UX</span>
+                <span>Animation</span>
               </div>
             </div>
           </article>
+
+          <article class="project-card">
+            <div class="card-visual art-2b">
+              <img src="2b.jpg" alt="2B Fanart" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <span class="card-fallback" style="display:none;">2B</span>
+            </div>
+            <div class="card-info">
+              <h3>2B Fanart</h3>
+              <p>A stylized digital illustration of 2B from NieR: Automata.</p>
+              <div class="card-tags">
+                <span>Illustration</span>
+                <span>Fanart</span>
+                <span>2D</span>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
