@@ -63,3 +63,18 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+/* ── Video Hover Play ── */
+document.querySelectorAll(".project-card").forEach((card) => {
+  const video = card.querySelector("video");
+  if (!video) return;
+
+  card.addEventListener("mouseenter", () => {
+    video.play().catch(() => {});
+  });
+
+  card.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+});

@@ -26,6 +26,19 @@ body {
   line-height: 1.6;
 }
 
+/* Grain / noise overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; }
 
@@ -87,25 +100,62 @@ button { font-family: inherit; }
   text-align: center;
   padding: 120px 5vw 80px;
   position: relative;
+  overflow: hidden;
 }
 
+/* Gradient orb — top right */
 .hero::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%);
+  top: -15%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.035) 0%, transparent 65%);
   border-radius: 50%;
   pointer-events: none;
+  animation: orbFloat 12s ease-in-out infinite alternate;
+}
+
+/* Gradient orb — bottom left */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -8%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.025) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbFloat 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes orbFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -25px) scale(1.08); }
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   animation: fadeUp 0.9s ease both;
+}
+
+/* Dot grid on hero */
+.hero .hero-content::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: -1;
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, black 10%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, black 10%, transparent 100%);
 }
 
 .hero-greeting {
@@ -164,6 +214,62 @@ button { font-family: inherit; }
 .section {
   padding: 120px 8vw;
   border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dot grid pattern on all sections */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 100%);
+}
+
+/* Floating glow on About section */
+.about::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: -5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbFloat 18s ease-in-out infinite alternate;
+}
+
+/* Floating glow on Work section */
+.work::after {
+  content: "";
+  position: absolute;
+  bottom: 5%;
+  right: -8%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(255,255,255,0.025) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbFloat 20s ease-in-out infinite alternate-reverse;
+}
+
+/* Floating glow on Contact section */
+.contact::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbFloat 14s ease-in-out infinite alternate;
 }
 
 .section-header { margin-bottom: 60px; }
@@ -271,22 +377,21 @@ button { font-family: inherit; }
 
 .cv-link {
   display: inline-block;
-  margin-top: 28px;
-  padding: 10px 24px;
-  border: 1px solid var(--border-hover);
-  border-radius: 50px;
-  font-size: 0.82rem;
+  margin-bottom: 30px;
+  font-size: 0.88rem;
   font-weight: 500;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
-  transition: all 0.3s;
+  color: var(--text);
+  opacity: 0.45;
+  letter-spacing: 0.01em;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+  transition: opacity 0.3s, border-color 0.3s;
 }
 
 .cv-link:hover {
-  background: var(--text);
-  color: var(--bg);
+  opacity: 0.85;
+  border-bottom-style: solid;
   border-color: var(--text);
-  transform: translateY(-2px);
 }
 
 /* ── Work ── */
@@ -384,6 +489,33 @@ button { font-family: inherit; }
   letter-spacing: 0.03em;
   position: relative;
   z-index: 2;
+}
+
+.card-visual img,
+.card-visual video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-visual img,
+.project-card:hover .card-visual video {
+  transform: scale(1.04);
+}
+
+.card-fallback {
+  font-family: "Fredoka One", cursive;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.03em;
+  position: relative;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
 }
 
 .gamblemon { background: linear-gradient(135deg, #7d62d6, #5a3fb5); }

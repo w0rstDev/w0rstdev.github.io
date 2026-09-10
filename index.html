@@ -13,7 +13,7 @@
 <body>
 
   <header class="nav">
-    <a class="logo" href="#hero">ZALI</a>
+    <a class="logo" href="#hero">zALI</a>
     <nav>
       <a href="#about">About</a>
       <a href="#work">Work</a>
@@ -39,7 +39,6 @@
     <!-- Who are you? -->
     <section id="about" class="section about">
       <div class="section-header">
-        <span class="section-number">01</span>
         <h2>Who are you?</h2>
       </div>
       <div class="about-content">
@@ -53,6 +52,7 @@
           <p class="about-bio">
             Short bio goes here. A few sentences about who you are, what you do, and what drives you. Keep it real, keep it you. Replace this with your own story.
           </p>
+          <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">grab my cv →</a>
           <div class="about-tags">
             <span>Unity</span>
             <span>C#</span>
@@ -60,7 +60,6 @@
             <span>Game Design</span>
             <span>Pixel Art</span>
           </div>
-          <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">📄 Grab my CV — you know you want to ↗</a>
         </div>
       </div>
     </section>
@@ -68,7 +67,6 @@
     <!-- What did you make? -->
     <section id="work" class="section work">
       <div class="section-header">
-        <span class="section-number">02</span>
         <h2>What did you make?</h2>
       </div>
       <p class="work-tagline">
@@ -85,9 +83,12 @@
       <!-- PC -->
       <div class="tab-panel active" id="tab-pc">
         <div class="project-grid">
+
+          <!-- Image-based card: put your .png in the project folder -->
           <article class="project-card">
             <div class="card-visual gamblemon">
-              <span>GAMBLEMON</span>
+              <img src="gamblemon.png" alt="Gamblemon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <span class="card-fallback" style="display:none;">GAMBLEMON</span>
             </div>
             <div class="card-info">
               <h3>Gamblemon</h3>
@@ -99,9 +100,13 @@
               </div>
             </div>
           </article>
+
+          <!-- Video-based card: put your .mp4 in the project folder -->
           <article class="project-card">
             <div class="card-visual waifuro">
-              <span>WAIFURO</span>
+              <video src="waifuro.mp4" muted loop playsinline
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+              <span class="card-fallback" style="display:none;">WAIFURO</span>
             </div>
             <div class="card-info">
               <h3>Waifuro</h3>
@@ -113,6 +118,7 @@
               </div>
             </div>
           </article>
+
         </div>
       </div>
 
@@ -158,7 +164,6 @@
     <!-- Contact me -->
     <section id="contact" class="section contact">
       <div class="section-header">
-        <span class="section-number">03</span>
         <h2>Contact me</h2>
       </div>
       <p class="contact-sub">Want to work together, say hi, or just argue about game mechanics?</p>
