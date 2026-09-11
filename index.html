@@ -11,6 +11,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Animated Background Lines -->
+  <div class="bg-lines">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
 
   <header class="nav">
     <a class="logo" href="#hero">zALI</a>
@@ -71,7 +84,7 @@
       </div>
       <p class="work-tagline">
         Can you believe it? All the coding and game design here is entirely done by me.
-        I know, I'm just as shocked as you are. 🎮
+        I know, I'm just as shocked as you are. ✌️
       </p>
 
       <div class="tabs">
@@ -94,10 +107,12 @@
             <div class="card-info">
               <h3>Gamblemon</h3>
               <p>A Pokémon-inspired roguelike slot machine where luck, synergies and strategy collide.</p>
+              <div class="card-links">
+                <a href="https://youtu.be/8EOUxVPju2k" target="_blank" rel="noopener" class="card-btn youtube">YouTube</a>
+              </div>
               <div class="card-tags">
                 <span>Unity</span>
                 <span>Roguelike Deckbuilder</span>
-                <span>Game Design</span>
               </div>
             </div>
           </article>
@@ -111,6 +126,9 @@
             <div class="card-info">
               <h3>Waifuro</h3>
               <p>A roguelike deckbuilder built around collecting characters and discovering synergies.</p>
+              <div class="card-links">
+                <a href="https://store.steampowered.com/app/4431800/Waifuro__Roguelike_Waifubuilder/" target="_blank" rel="noopener" class="card-btn steam">Steam</a>
+              </div>
               <div class="card-tags">
                 <span>Unity</span>
                 <span>Deckbuilder</span>
@@ -133,6 +151,7 @@
                 <span>Unity</span>
                 <span>Top-Down Shooter</span>
                 <span>Action</span>
+                <span>Game Jam</span>
               </div>
             </div>
           </article>
@@ -146,10 +165,14 @@
             <div class="card-info">
               <h3>Decks of Echoes</h3>
               <p>A Shogun Showdown-inspired roguelike deckbuilder with deep tactical combat and positioning.</p>
+              <div class="card-links">
+                <a href="https://www.reddit.com/r/deckbuildingroguelike/comments/19c9tnc/is_this_interesting_enough/" target="_blank" rel="noopener" class="card-btn reddit">Reddit</a>
+              </div>
               <div class="card-tags">
                 <span>Unity</span>
                 <span>Deckbuilder</span>
                 <span>Roguelike</span>
+                <span>Prototype</span>
               </div>
             </div>
           </article>
@@ -164,10 +187,53 @@
             <div class="card-info">
               <h3>Tech Loop</h3>
               <p>A fast-paced 2D top-down roguelike shooter set in a hyper-advanced cybernetic future.</p>
+              <div class="card-links">
+                <a href="https://wanted-studio.itch.io/tech-loop" target="_blank" rel="noopener" class="card-btn itchio">itch.io</a>
+              </div>
               <div class="card-tags">
                 <span>Unity</span>
                 <span>Top-Down Shooter</span>
                 <span>Sci-Fi</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Image-based card: GalaxyWar -->
+          <article class="project-card">
+            <div class="card-visual galaxywar">
+              <img src="GalaxyWar.png" alt="GalaxyWar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <span class="card-fallback" style="display:none;">GALAXYWAR</span>
+            </div>
+            <div class="card-info">
+              <h3>Galaxy War</h3>
+              <p>A retro space invaders clone that brings back the golden age of arcade shooters.</p>
+              <div class="card-links">
+                <a href="https://w0rstdev.itch.io/galaxy-war" target="_blank" rel="noopener" class="card-btn itchio">itch.io</a>
+              </div>
+              <div class="card-tags">
+                <span>Unity</span>
+                <span>Arcade</span>
+                <span>Retro</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Image-based card: FleetingFrenzy -->
+          <article class="project-card">
+            <div class="card-visual fleetingfrenzy">
+              <img src="FleetingFrenzy.png" alt="Fleeting Frenzy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <span class="card-fallback" style="display:none;">FLEETING FRENZY</span>
+            </div>
+            <div class="card-info">
+              <h3>Fleeting Frenzy</h3>
+              <p>A strategic card-tower defense hybrid created for ITU Frost Jam 6.</p>
+              <div class="card-links">
+                <a href="https://w0rstdev.itch.io/fleeting-frenzy" target="_blank" rel="noopener" class="card-btn itchio">itch.io</a>
+              </div>
+              <div class="card-tags">
+                <span>Unity</span>
+                <span>Tower Defense</span>
+                <span>Game Jam</span>
               </div>
             </div>
           </article>
@@ -243,19 +309,18 @@
       <div class="section-header">
         <h2>Contact me</h2>
       </div>
-      <p class="contact-sub">Want to work together, say hi, or just argue about game mechanics?</p>
+      <p class="contact-sub">Want to work together? Say hi!</p>
       <div class="contact-links">
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="mailto:hello@example.com">Email ↗</a>
+        <a href="https://github.com/w0rstDev" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/mehmet-ali-ateş-ab564b215/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:mehmetali_ates03@hotmail.com">Email ↗</a>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <span>© 2026 ZALI</span>
-    <span>Built with love & too much caffeine ☕</span>
+    <span>© 2026 zALI</span>
   </footer>
 
   <script src="script.js"></script>

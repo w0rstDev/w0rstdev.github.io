@@ -64,17 +64,34 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-/* ── Video Hover Play ── */
+/* ── Video Play Logic (Desktop Hover / Mobile Auto) ── */
+const isTouchDevice = window.matchMedia("(hover: none)").matches || window.innerWidth < 768;
+
 document.querySelectorAll(".project-card").forEach((card) => {
   const video = card.querySelector("video");
   if (!video) return;
 
-  card.addEventListener("mouseenter", () => {
-    video.play().catch(() => {});
-  });
+  if (isTouchDevice) {
+    // Mobile: Auto-play when visible to save battery/data, no hover needed
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(card);
+  } else {
+    // Desktop: Play on hover
+    card.addEventListener("mouseenter", () => {
+      video.play().catch(() => {});
+    });
 
-  card.addEventListener("mouseleave", () => {
-    video.pause();
-    video.currentTime = 0;
-  });
+    card.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
 });
